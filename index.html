@@ -8,8 +8,8 @@
 
 <body>
 	<script>
-		let prefix = 'http://xsoc.org/';
-		let ids = [
+		var prefix = 'http://xsoc.org/';
+		var ids = [
 		'UgdR',
 		'QKzY',
 		'FojO',
@@ -31,8 +31,8 @@
     		return null;
     	}
 
-    	let id = getQueryString('id') ? getQueryString('id'): ids[Math.floor(Math.random() * ids.length)];
-    	let timer = 2;
+    	var id = getQueryString('id') ? getQueryString('id'): ids[Math.floor(Math.random() * ids.length)];
+    	var timer = 2;
     	function send() {
     		if (timer <= 1) {
     			window.location.href = prefix + id;
