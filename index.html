@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>在线书城欢迎您~</title>
+</head>
+
+<body>
+	<script>
+		let prefix = 'http://xsoc.org/';
+		let ids = [
+		'UgdR',
+		'QKzY',
+		'FojO',
+		'WtYL',
+		'bJ6U',
+		'jyqJ',
+		'QLRg',
+		'mQK0',
+		'Q7RO',
+		'R14k',
+		];
+    	// 获取参数
+    	function getQueryString(name) {
+    		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    		var r = window.location.search.substr(1).match(reg);
+    		if (r != null) {
+    			return unescape(r[2]);
+    		}
+    		return null;
+    	}
+
+    	let id = getQueryString('id') ? getQueryString('id'): ids[Math.floor(Math.random() * ids.length)];
+    	let timer = 2;
+    	function send() {
+    		if (timer <= 1) {
+    			window.location.href = prefix + id;
+    		} else {
+    			timer--;
+    			setTimeout('send()', 1000);
+    		}
+    	}
+
+    	send();
+    </script>
+</body>
+
+</html>
